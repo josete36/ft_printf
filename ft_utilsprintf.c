@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_utilsprintf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose <jose@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 20:27:55 by jomoreno          #+#    #+#             */
-/*   Updated: 2022/06/23 20:22:09 by jose             ###   ########.fr       */
+/*   Created: 2022/06/23 18:26:06 by jose              #+#    #+#             */
+/*   Updated: 2022/06/23 22:12:20 by jose             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
+#include<unistd.h>
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
+void	ft_putchar(char c, int *total_str)
+{
+	write(1, &c, 1);
+	total_str++;
+}
 
-int		ft_printf(char const *str, ...);
-void	ft_phold(const char *str, int *total_str, va_list arg, int i);
-void	ft_putchar(char c, int *total_str);
+void	ft_putstr(char *s, int *total_str)
+{
+	if (!s)
+		return ;
+	while (*s != '\0')
+	{
+		write(1, s, 1);
+		s++;
+		total_str++;
+	}
+}
 
-#endif
+void	*ft_hex(unsigned long long p, int *total_str, char *hex)
+{
+	
+}

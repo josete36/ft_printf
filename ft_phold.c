@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_phold.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose <jose@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 20:27:55 by jomoreno          #+#    #+#             */
-/*   Updated: 2022/06/23 20:22:09 by jose             ###   ########.fr       */
+/*   Created: 2022/06/23 18:41:43 by jose              #+#    #+#             */
+/*   Updated: 2022/06/23 22:16:34 by jose             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
+#include <stdarg.h>
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-int		ft_printf(char const *str, ...);
-void	ft_phold(const char *str, int *total_str, va_list arg, int i);
-void	ft_putchar(char c, int *total_str);
-
-#endif
+void    ft_phold(const char *str, int *total_str, va_list arg, int i)
+{
+	char	*base16;
+	
+	base16 = "0123456789abcdef" 
+	if (str[i + 1] == 'c')
+		ft_putchar(va_arg(arg, int), total_str);
+	else if (str[i + 1] == 's')
+		ft_putstr(va_arg(arg, char*), total_str);
+	else if (str[i + 1] == 'p')
+		ft_hex(va_arg(arg, unsigned long long), total_str, *base16);
+		
+}
+		
