@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_phold.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jose <jose@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jomoreno <jomoreno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 18:41:43 by jose              #+#    #+#             */
-/*   Updated: 2022/06/23 22:16:34 by jose             ###   ########.fr       */
+/*   Updated: 2022/06/29 21:24:06 by jomoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 
 void    ft_phold(const char *str, int *total_str, va_list arg, int i)
 {
-	char	*base16;
-	
-	base16 = "0123456789abcdef" 
 	if (str[i + 1] == 'c')
 		ft_putchar(va_arg(arg, int), total_str);
 	else if (str[i + 1] == 's')
 		ft_putstr(va_arg(arg, char*), total_str);
 	else if (str[i + 1] == 'p')
-		ft_hex(va_arg(arg, unsigned long long), total_str, *base16);
-		
+	{
+		write(1, &"0x", 2);
+		ft_hex(va_arg(arg, unsigned long long), total_str);
+	}
+	else if (str[i + 1] == 'd' || str[i + 1] == 'i')
+		ft_dec(va_arg(arg, int), total_str);
+	else if (str[i + 1] == 'u')
+		ft_ssigndec(va_arg(arg, unsigned int), total_str);
 }
 		

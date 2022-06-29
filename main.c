@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jomoreno <jomoreno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 20:02:23 by jomoreno          #+#    #+#             */
-/*   Updated: 2022/06/29 19:46:37 by jomoreno         ###   ########.fr       */
+/*   Created: 2022/06/29 17:25:01 by jomoreno          #+#    #+#             */
+/*   Updated: 2022/06/29 20:40:01 by jomoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
+#include <stdio.h>
 
-int	ft_printf(char const *str, ...)
+int	main(void)
 {
-	int		i;
-	int		total_str;
-	va_list	arg;
+	int	ni;
 
-	va_start(arg, str);
-	i = 0;
-	total_str = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == '%')
-		{
-			ft_phold(str, &total_str, arg, i);
-			i++;
-		}
-		else
-			ft_putchar(str[i], &total_str);
-		i++;
-	}
-	va_end(arg);
-	return (total_str);
+	ni = 450;
+	ft_printf("hola %d\n", -43290);
+	return (0);
 }
