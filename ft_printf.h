@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jomoreno <jomoreno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jose <jose@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 20:27:55 by jomoreno          #+#    #+#             */
-/*   Updated: 2022/06/29 21:30:19 by jomoreno         ###   ########.fr       */
+/*   Updated: 2022/07/25 22:48:35 by jose             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	ft_putstr(char *s, int *total_str);
 void	ft_hex(unsigned long long p, int *total_str);
 void	ft_dec(int num,	int *total_str);
 void	ft_ssigndec(unsigned int num, int *total_str);
+void	ft_hex_may(unsigned long long p, int *total_str);
 
 #endif
